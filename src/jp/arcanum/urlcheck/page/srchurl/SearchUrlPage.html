@@ -1,0 +1,223 @@
+<wicket:extend>
+
+
+	<br>
+
+	<div class="row">
+
+		<div class="span12">
+			URLチェックをする<br>
+			<input type="text"  class="input-xxlarge"  style="font-size: x-large;"  placeholder="ここに短縮URLなどを入力してください。" wicket:id="checkurl" />
+			<input type="submit" value="　URLチェック　"  class="btn btn-large" wicket:id="acturlcheck" />
+		</div>
+
+	</div>
+
+
+	<br>
+
+	<!-- ■■■　サイト説明！ -->
+
+	<div class="row" wicket:id="whatsthissite">
+
+		<div class="span10">
+
+
+			<div class="row">
+
+				<div class="span10" >
+
+					<hr>
+
+					<h3>
+						このサイトは何？
+					</h3>
+					<p>
+						twitterやFacebook等のSNS、インターネット上では沢山の短縮URLが使われています。
+						とても便利な反面、アクセス先のURLがフィッシングサイトだったり、
+						危険なツールを配布するサイトだったりします。
+			 		</p>
+
+			 		<p>
+						短縮URLを見ただけでは安全なサイトか、危険なサイトなのか判断つきませんので、
+						どのページに移動されるかをチェックするサイトです。URLチェッカーの特徴は下記の通りです。
+					</p>
+
+
+				</div>
+
+			</div>
+
+
+			<div class="row">
+
+				<div class="span10">
+
+					<ul class="unstyled" >
+						<li><span class="badge badge-info">1</span>&nbsp;危険なURLをチェックします。</li>
+						<li><span class="badge badge-info">2</span>&nbsp;短縮URLの場合は、最終的なURLまでの経路を表示します。</li>
+						<li><span class="badge badge-info">3</span>&nbsp;経路最後のサイトのタイトル、内容を表示します。</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				<div class="label label-important span10">
+
+						<ul>
+							<li>このチェッカーはチェックしたサイトの安全性を保証するものではありません。</li>
+							<li>チェックされたURLについては自己で危険性を判断したうえ、お使いください。</li>
+						</ul>
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+		<div class="span2 hidden-phone">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5031109481190932";
+/* 縦長 */
+google_ad_slot = "5602883433";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+		</div>
+
+	</div>
+
+
+
+	<!-- ■■■　検索結果！ -->
+
+	<div class="row"  wicket:id="result">
+
+		<div class="span10">
+
+			<hr>
+
+			<h3>入力と結果</h3>
+			<h2 style="color: red;font-weight: bold;" wicket:id="criticalmessage">
+				<span wicket:id="criticalmessagelabel">危険なURLです！</span>
+			</h2>
+			<table class="table table-striped table-bordered table-condensed">
+
+				<tr>
+					<th>
+						入力
+					</th>
+					<td>
+						<span wicket:id="inputurl">http://hogehogehoehgeo.jp/sfsdf</span>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						結果
+					</th>
+					<td>
+						<span wicket:id="outputurl">http://hogehogehoehgeo.jp/sfsdf</span>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						タイトル
+					</th>
+					<td>
+						<span wicket:id="outputtitle">ほげほげｈごｇｈそｇほｈごしょｇしょｓｈｇそｈ</span>
+					</td>
+				</tr>
+
+			</table>
+
+			<br>
+
+			<h3>リダイレクト情報</h3>
+			<table class="table table-striped table-bordered table-condensed">
+
+				<tr wicket:id="urlinfolist">
+					<th>
+						URL <span class="badge badge-info"><span wicket:id="index" /></span>
+					</th>
+					<td>
+						<span wicket:id="urlinfo" style="word-wrap:break-word;">http://hogehogehoehgeo.jp/sfsdf</span>
+					</td>
+					<td>
+						<span wicket:id="safety" />
+					</td>
+				</tr>
+
+			</table>
+
+			<br>
+
+			<h3>コンテンツ</h3>
+			<h5>
+			URL : <a wicket:id="contentsurl" target="_blank"><span wicket:id="contentsurllabel">http://hogehoge.fugafuga...</span></a><span wicket:id="contentsurlvirus">http://hogehoge.fugafuga...</span>
+			</h5>
+
+
+			<ul class="nav nav-tabs">
+				<li class="active">
+			        <li class="active" wicket:id="bodyonly" ><a href="#" wicket:id="actbodyonly">　内容のみ　</a></li>
+				</li>
+				<li>
+			        <li                wicket:id="html"     ><a href="#" wicket:id="acthtml"    >　　HTML　　</a></li>
+				</li>
+
+			</ul>
+
+
+			<div>
+				<pre wicket:id="contents_bodyonly" />
+				<pre wicket:id="contents_html" style="display:none;" />
+			</div>
+
+
+
+
+			<br>
+
+		</div>
+
+
+		<div class="span2 hidden-phone">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5031109481190932";
+/* 縦長 */
+google_ad_slot = "5602883433";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		</div>
+
+
+	</div>
+
+
+
+<br>
+
+
+
+</wicket:extend>
+
+
